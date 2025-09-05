@@ -1,0 +1,27 @@
+1: Inception & Data
+
+Finalize scope (single city MVP).
+
+Ingest Kaggle hotel/POI datasets, clean, load to Supabase.
+
+Set up embeddings + hybrid search.
+
+2: Orchestration & Tools
+
+Implement /plan endpoint and tool functions.
+
+First prompt templates; itinerary heuristic.
+
+3: Frontend MVP
+
+Trip Wizard + Chat; hotel picker; save/load trips.
+
+Basic map/day timeline.
+
+4: Eval & Polish
+
+Add feedback loop; telemetry; improve prompts.
+
+Pilot test with 10 users; fix top issues.
+
+Stretch (Weeks 5–6): multi‑city, personalization, weather/events.
