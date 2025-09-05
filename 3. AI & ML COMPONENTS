@@ -1,1 +1,54 @@
+3.1 LANGUAGE MODEL OPTIONS 
 
+Hosted: OpenAI, Anthropic, Google. Pros: strong reasoning; Cons: cost.
+
+Open‑source: Llama 3.x, Mistral, Qwen via server (vLLM). Pros: control; Cons: infra.
+
+Recommendation (MVP): Start hosted (smaller ops overhead), design a provider interface so you can swap.
+
+3.2 retrival and embeddings 
+Use pgvector in Supabase for semantic search over POIs/hotels.
+
+Index fields: name, category, tags, neighborhood.
+
+Hybrid search = BM25 (text) + cosine similarity (embeddings).
+
+3.3 ltinerary scheduling heuristic (greedy and constraints)
+
+Inputs: days, open hours, estimated dwell times, category diversity, travel time matrix.
+
+Steps:
+
+Seed each day with 1 anchor POI (high rank, must‑see).
+
+Fill morning/afternoon/evening with compatible POIs (open, nearby, diverse).
+
+Insert meals near current POI at typical meal times.
+
+Enforce rest time and travel buffers.
+
+Pseudo‑code:
+for day in days:
+add(anchor(day))
+while slots_available:
+cand = argmax(score(poi | current_time, location, diversity))
+if open_hours_ok(cand) and travel_time_ok(prev, cand):
+schedule(cand)
+add(meals_nearby())
+
+3.4 guradralis and safety 
+
+Refuse illegal/unsafe suggestions.
+
+Cite data source & last‑updated timestamps.
+
+Ask permission before booking links.
+
+
+
+
+
+
+
+
+Repair step if conflicts/closures.
