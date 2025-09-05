@@ -1,1 +1,43 @@
+Frontend: React (your existing stack). Components: Trip Wizard, Chat Pane, Hotel Picker, Map/Day View, Review Modal.
 
+Backend: Node/Express or FastAPI. Responsibilities: LLM orchestration, retrieval, ranking, itinerary synthesis, data ETL jobs.
+
+Database (Supabase/Postgres):
+
+profiles(user_id, home_airport, preferences_json)
+
+trips(id, user_id, title, destination_json, start_date, end_date, budget_low, budget_high, party_json, created_at)
+
+itineraries(id, trip_id, daily_plan_json, version, created_at)
+
+hotels(id, city, name, addr, lat, lng, stars, price_bucket, amenities, source_id)
+
+pois(id, city, name, category, lat, lng, open_hours, rating, tags, source_id)
+
+reviews(entity_id, entity_type, rating, text, source, lang)
+
+chat_history(id, trip_id, user_id, role, content, ts)
+
+feedback(id, trip_id, dimension, score, comment, ts)
+
+Services/Modules:
+
+NLU & Slot Filling: parse constraints (dates, budgets, interests).
+
+Retrieval: city → hotels/POIs (vector + keyword). Optional embeddings in Supabase pgvector.
+
+Ranking: hybrid score (relevance × rating × price fit × proximity × hours compatibility).
+
+Itinerary Composer: schedules POIs across days with travel time and open hours constraints.
+
+LLM Layer: prompt templates, tools (hotel search, POI search, routing), and guardrails.
+
+Evaluation & Telemetry: store prompts, outputs, user feedback.
+
+Data Flow:
+
+User → Chat → LLM asks clarifying Qs → Slots filled.
+
+Tools fetch hotels & POIs → rank → itinerary candidate.
+
+LLM verbalizes rationale + presents plan → user edits → save.
