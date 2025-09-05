@@ -1,0 +1,32 @@
+Problem Statement & Goals
+
+Problem: Travelers spend hours comparing blogs, hotels, and attractions. Existing tools either feel generic or require too many manual steps.
+
+Goal: Build a conversational agent that:
+
+Gathers a user’s constraints (destination(s), dates, budget, interests, mobility, companions).
+
+Generates a day‑by‑day itinerary with travel times and opening hours.
+
+Recommends hotels (ranked) and points of interest with justifications.
+
+Exports/share plans and keeps trip memory across sessions.
+
+Success Criteria (MVP):
+
+The bot can plan a 3‑day itinerary for a single city with hotel suggestions within a user’s budget.
+
+Save and re‑load trips from Supabase.
+
+
+
+
+70% of pilot users rate itineraries ≥4/5 for usefulness.
+
+Stretch:
+
+Multi‑city routing with transit times.
+
+Personalization from previous trips.
+
+Live signals (weather, events, price ranges) via pluggable providers.
