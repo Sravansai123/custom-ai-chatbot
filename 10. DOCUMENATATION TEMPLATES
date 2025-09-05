@@ -1,0 +1,67 @@
+10.1 README (Project Overview)
+
+Name: Travel Planner AI
+
+Problem & Motivation:
+
+Features (MVP & Stretch):
+
+Architecture Diagram: (paste image)
+
+Tech Stack: React, Node/FastAPI, Supabase, pgvector, LLM provider.
+
+Quickstart: env vars, migration, seed scripts, run commands.
+
+Demo GIF/Screens:
+
+Limitations & Future Work:
+
+10.2 Model Card
+
+Model(s) Used: provider/version; temperature; max tokens.
+
+Training/Finetuning: (if any)
+
+Intended Use & Out‑of‑Scope:
+
+Safety & Bias Considerations:
+
+Evaluation Summary: metrics + sample prompts.
+
+Update History: dates & changes.
+
+10.3 Data Card
+
+Source: Kaggle dataset name/URL; OSM extracts, etc.
+
+Licenses & Usage Terms:
+
+Schema & Fields:
+
+Collection & Cleaning: dedupe, geocoding, filters.
+
+Known Limitations & Biases: urban bias, language bias.
+
+Refresh Cadence: weekly/monthly.
+
+10.4 Design Decisions Log (ADR)
+
+ADR-0001: Hosted LLM for MVP – rationale: speed to market vs. cost.
+
+ADR-0002: Hybrid Search – rationale: better recall + precision.
+
+ADR-0003: Greedy Scheduler – rationale: simpler than solver; good enough.
+
+10.5 Experiments Log
+
+Exp-01: Prompt v1 vs v2 on 20 chats → slot F1 from 0.72 → 0.81.
+
+Exp-02: Ranking weights A vs B → hotel click‑through +12%.
+
+10.6 Changelog (Semantic Versioning)
+
+v0.1.0 MVP single‑city; save/load trips.
+
+v0.2.0 Personalization + feedback loop.
+
+v0.3.0 Multi‑city routing.
