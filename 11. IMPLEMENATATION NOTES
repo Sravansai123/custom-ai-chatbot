@@ -1,0 +1,15 @@
+State: use React Query for API calls, optimistic updates for feedback.
+
+SUPABASE TIPS :
+
+enables RLS; policies by user_id.
+
+Use pgvector extension and a embedding column for POIs/hotels.
+
+Write SQL views: v_hotels_ranked(city, budget_bucket).
+
+caching:
+
+Cache hotel/POI search for city+budget+interests.
+
+Persist embeddings & retrieval results for popular cities.
