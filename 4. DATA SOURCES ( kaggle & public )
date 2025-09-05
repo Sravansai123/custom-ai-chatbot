@@ -1,0 +1,23 @@
+You can start offline with static datasets, then later add live APIs.
+
+Hotels & Reviews:
+
+Booking.com / Expedia hotel review datasets (Kaggle). Fields: star rating, user rating, price range, amenities, location.
+
+Attractions/POIs:
+
+TripAdvisor reviews (Kaggle), Open Tourist Attractions datasets, city POI CSVs.
+
+Open Data:
+
+OpenStreetMap (via exports) for coordinates/categories; city open data portals for opening hours.
+
+User Signals (optional): anonymized click/like logs you collect.
+
+ETL Notes:
+
+Normalize cities to ISO codes; geocode missing lat/lng; dedupe by fuzzy name + geo radius.
+
+Compute embeddings once; schedule weekly refresh.
+
+Create derived columns: price_bucket, family_friendly, best_for_rainy_day.
