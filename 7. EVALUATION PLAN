@@ -1,0 +1,17 @@
+Automated:
+
+F1 on slot extraction (dates, budget, party size) against labeled chats.
+
+Recall@K for POI retrieval vs. curated lists.
+
+Constraint satisfaction rate (open hours, travel time limits).
+
+Human:
+
+5‑point rubrics: suitability to preferences, logical flow, pacing, novelty.
+
+A/B prompts and ranking weights.
+
+Success Gate:
+
+≥80% constraint satisfaction; average human score ≥4/5 across 20 test users.
