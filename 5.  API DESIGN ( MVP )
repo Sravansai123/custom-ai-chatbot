@@ -1,0 +1,17 @@
+POST /plan
+
+Request: { destination, start_date, end_date, budget, interests[], party, pace }
+
+Response: { itinerary: Day[], hotels: Hotel[], rationale, sources[] }
+
+GET /trips/****:id → returns saved itinerary + messages.
+
+POST /feedback → { trip_id, dimension: 'usefulness'|'hotel_fit'|'pace', score, comment }
+
+Tool Functions (LLM)
+
+search_hotels(city, budget, amenities)
+
+search_pois(city, interests, time_window)
+
+route_time(origin, destination, mode)
